@@ -1,23 +1,28 @@
-function pow(num, degree){
-    let result = 1;
-    for (let i = 1; i <= degree; i++) {
-        result = result * num;
-    }
-    
-    return result;
+function getValue() {
+    const value = parseInt(prompt(`Enter a value:`));
+    return value;
 }
 
-let result = pow(4,2);
-console.log(result)
+const num = getValue();
+const degree = getValue();
 
 
-// let degree = 2;
-// let num = 2;
-// let result = 1;
-// for (let i = 1; i <= degree; i++) {
-//     result = result * num;
-// }
-// console.log(result);
+function pow(num, degree){
+   
+    if(degree === 0){
+        return 1;
+    } else if (degree < 0) {
+        return 1 / pow(num, -degree);
+    } else{
+        return num *pow(num, degree - 1);
+    }
+    
+}
+
+let result = pow(num, degree);
+alert(result);
+
+
 
 
 // Реалізувати рекурсивну функцію, яка зводить число в ступінь.
